@@ -1,6 +1,6 @@
 # chocolate-doom flake
 
-[flake-parts](https://flake.parts) module to create a chocolate-doom application.
+[flake-parts](https://flake.parts) module to create a [chocolate-doom](https://github.com/chocolate-doom/chocolate-doom) application.
 
 You can enable this and set the options like so:
 
@@ -8,7 +8,10 @@ You can enable this and set the options like so:
 {
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
-    chocolate-doom.url = "github:chocolate-doom/chocolate-doom";
+    chocolate-doom = {
+      flake = false;
+      url = "github:chocolate-doom/chocolate-doom";
+    };
     chocolate-doom-flake.url = "git+https://github.com/cardano-scaling/chocolate-doom-flake";
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
