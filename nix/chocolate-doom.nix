@@ -13,6 +13,10 @@
           type = types.attrsOf (types.submodule ({ config, ... }: {
             options = {
               enable = mkEnableOption "chocolate-doom";
+              name = mkOption {
+                type = types.str;
+                default = "chocolate-doom";
+              };
               iwad = mkOption {
                 type = types.listOf types.path;
               };
@@ -21,8 +25,8 @@
               };
               outputPackage = mkOption {
                 type = types.attrs;
-                default = pkgs.writers.writeBashBin "doom" ''
-                  ${pkgs.lib.getExe (pkgs.chocolate-doom.overrideAttrs (old: old // { inherit (config) src; }))} -iwad ${builtins.concatStringsSep " " config.iwad};
+                default = pkgs.writers.writeBashBin config.name ''
+                  ${(pkgs.chocolate-doom.overrideAttrs (old: old // { inherit (config) name src; }))}/bin/${config.name} -iwad ${builtins.concatStringsSep " " config.iwad};
                 '';
               };
             };

@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "crispy-doom": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1751012254,
+        "narHash": "sha256-Ne/mAlyFfXNBYT+51n+oDVYfesmzEEnofEy20I/3vqU=",
+        "owner": "fabiangreffrath",
+        "repo": "crispy-doom",
+        "rev": "b5c9435737bbda61e2835fa6af22d30bc0b56299",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fabiangreffrath",
+        "repo": "crispy-doom",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "locked": {
         "lastModified": 1733328505,
@@ -53,11 +69,11 @@
     },
     "import-tree": {
       "locked": {
-        "lastModified": 1745565707,
-        "narHash": "sha256-ccFeWWQ9RLgCd1k+xwV/ASUkJ7AGTTaGDhlRWZgytxY=",
+        "lastModified": 1751393280,
+        "narHash": "sha256-0UBH7ct/btgqwUJ2tL6m3XW5c9OV/fn5uooOkG5l054=",
         "owner": "vic",
         "repo": "import-tree",
-        "rev": "ed504db425c363b13f13d5ca52f1a2600c4a7703",
+        "rev": "234b5bb6307242167406477bc904b4fdb6a02dd3",
         "type": "github"
       },
       "original": {
@@ -68,11 +84,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1749285348,
-        "narHash": "sha256-frdhQvPbmDYaScPFiCnfdh3B/Vh81Uuoo0w5TkWmmjU=",
+        "lastModified": 1751271578,
+        "narHash": "sha256-P/SQmKDu06x8yv7i0s8bvnnuJYkxVGBWLWHaU+tt4YY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3e3afe5174c561dee0df6f2c2b2236990146329f",
+        "rev": "3016b4b15d13f3089db8a41ef937b13a9e33a8df",
         "type": "github"
       },
       "original": {
@@ -99,6 +115,7 @@
     },
     "root": {
       "inputs": {
+        "crispy-doom": "crispy-doom",
         "flake-parts": "flake-parts",
         "get-flake": "get-flake",
         "import-tree": "import-tree",
