@@ -1,0 +1,36 @@
+{
+  flake.flakeModule = caller:
+    let inherit (caller.lib)
+      mkEnableOption
+      mkOption
+      types;
+      inherit (caller.flake-parts-lib)
+        mkPerSystemOption;
+    in
+    {
+      options.perSystem = mkPerSystemOption ({ pkgs, ... }: {
+        options.doom = mkOption {
+          type = types.attrsOf (types.submodule ({ config, ... }: {
+            options = {
+              enable = mkEnableOption "chocolate-doom";
+              iwad = mkOption {
+                type = types.listOf types.path;
+              };
+              src = mkOption {
+                type = types.path;
+              };
+              outputPackage = mkOption {
+                type = types.attrs;
+                default = pkgs.writers.writeBashBin "doom" ''
+                  ${pkgs.lib.getExe (pkgs.chocolate-doom.overrideAttrs (old: old // { inherit (config) src; }))} -iwad ${builtins.concatStringsSep " " config.iwad};
+                '';
+              };
+            };
+          }));
+        };
+      });
+      config.perSystem = { config, ... }: {
+        packages = caller.lib.mapAttrs (_: doom: doom.outputPackage) config.doom;
+      };
+    };
+}
