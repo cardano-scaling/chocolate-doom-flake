@@ -1,7 +1,6 @@
 {
   flake.flakeModule = caller:
     let inherit (caller.lib)
-      mkEnableOption
       mkOption
       types;
       inherit (caller.flake-parts-lib)
