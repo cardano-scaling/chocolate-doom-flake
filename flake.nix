@@ -1,5 +1,5 @@
 {
-  description = "chocolate-doom-hydra";
+  description = "chocolate-doom flake";
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";

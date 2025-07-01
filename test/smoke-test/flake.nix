@@ -1,6 +1,6 @@
 {
 
-  description = "lc/user test flake";
+  description = "test flake";
 
   inputs = {
     get-flake.url = "github:ursi/get-flake";
