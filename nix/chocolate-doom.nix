@@ -12,7 +12,6 @@
         options.doom = mkOption {
           type = types.attrsOf (types.submodule ({ config, ... }: {
             options = {
-              enable = mkEnableOption "chocolate-doom";
               name = mkOption {
                 type = types.str;
                 default = "chocolate-doom";

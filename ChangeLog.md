@@ -3,6 +3,7 @@
 ## 0.2.0
 
 * Add `config.name` field for finding the executable in different doom sources.
+* Remove redundant `config.enable` option.
 
 ## 0.1.0
 
